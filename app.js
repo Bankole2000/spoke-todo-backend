@@ -17,9 +17,9 @@ app.listen(PORT, () => {
 });
 
 const todoRoutes = require('./api/routes/todoRoutes');
-
+const routeMeta = require('./utils/routeMeta');
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to the Todo api' });
+  res.json({ message: 'Welcome to the Todo api', routes: routeMeta });
 });
 
 app.use('/api/todos', todoRoutes);
